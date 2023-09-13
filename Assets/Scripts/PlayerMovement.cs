@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     static Color myColor;
     SpriteRenderer myAvatarSprite;
 
+    static Sprite myAccsSprite;
+    SpriteRenderer myAccsHolder;
+
     private void OnEnable()
     {
         WASD.Enable();
@@ -40,10 +43,16 @@ public class PlayerMovement : MonoBehaviour
         myAvatar = transform.GetChild(0);
         myAnim = GetComponent<Animator>();
         myAvatarSprite = myAvatar.GetComponent<SpriteRenderer>();
+        myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
 
         if(myColor == Color.clear)
             myColor = Color.white;
         myAvatarSprite.color = myColor;
+
+
+        if(myAccsSprite != null)
+            myAccsHolder.sprite = myAccsSprite;
+        
 
     }
 
@@ -71,5 +80,11 @@ public class PlayerMovement : MonoBehaviour
         {
             myAvatarSprite.color = newColor;
         }
+    }
+
+    public void SetAccs(Sprite newAccs)
+    {
+        myAccsSprite = newAccs;
+        myAccsHolder.sprite = myAccsSprite;
     }
 }
