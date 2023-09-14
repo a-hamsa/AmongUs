@@ -12,19 +12,19 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody myRB;
     Animator myAnim;
     Transform myAvatar;
-
+    
     // player movement
     [SerializeField] InputAction WASD;
     Vector2 movementInput;
     [SerializeField] float movementSpeed;
-
+    
     // player color
     static Color myColor;
     SpriteRenderer myAvatarSprite;
 
 
     // role
-    [SerializeField] bool isImposter;
+    [SerializeField] bool isImposter; 
     [SerializeField] InputAction KILL;
 
     PlayerMovement target;
@@ -67,16 +67,16 @@ public class PlayerMovement : MonoBehaviour
         myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
 
 
-        if (myColor == Color.clear)
+        if(myColor == Color.clear)
             myColor = Color.white;
-        if (!hasControl)
+        if(!hasControl)
             return;
         myAvatarSprite.color = myColor;
 
 
-        if (myAccsSprite != null)
+        if(myAccsSprite != null)
             myAccsHolder.sprite = myAccsSprite;
-
+        
 
     }
 
@@ -91,19 +91,19 @@ public class PlayerMovement : MonoBehaviour
         {
             myAvatar.localScale = new Vector2(Mathf.Sign(movementInput.x), 1);
         }
-
+        
         myAnim.SetFloat("Speed", movementInput.magnitude);
     }
 
     private void FixedUpdate()
     {
-        myRB.velocity = movementInput * movementSpeed;
+        myRB.velocity = movementInput * movementSpeed; 
     }
 
     public void SetColor(Color newColor)
     {
         myColor = newColor;
-        if (myAvatarSprite != null)
+        if(myAvatarSprite != null)
         {
             myAvatarSprite.color = newColor;
         }
@@ -117,12 +117,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag =="Player")
         {
             PlayerMovement tempTarget = other.GetComponent<PlayerMovement>();
-            if (isImposter)
+            if(isImposter)
             {
-                if (tempTarget.isImposter)
+                if(tempTarget.isImposter)
                     return;
                 else
                 {
@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
                 return;
             else
             {
-                if (target.IsDead)
+                if(target.IsDead)
                     return;
                 transform.position = target.transform.position;
                 target.Die();
@@ -150,12 +150,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    public void SetAccs(Sprite newAccs)
-    {
-        myAccsSprite = newAccs;
-        myAccsHolder.sprite = myAccsSprite;
 
-    }
     public void Die()
     {
         IsDead = true;
@@ -163,6 +158,10 @@ public class PlayerMovement : MonoBehaviour
         myAnim.SetBool("IsDead", IsDead);
         myCollider.enabled = false;
 
-        
-    } 
+    public void SetAccs(Sprite newAccs)
+    {
+        myAccsSprite = newAccs;
+        myAccsHolder.sprite = myAccsSprite;
+
+    }
 }
