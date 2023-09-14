@@ -34,7 +34,10 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         KILL.performed += KillTarget;
-    }
+
+    static Sprite myAccsSprite;
+    SpriteRenderer myAccsHolder;
+
 
     private void OnEnable()
     {
@@ -59,11 +62,21 @@ public class PlayerMovement : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myAvatar = transform.GetChild(0);
         myAvatarSprite = myAvatar.GetComponent<SpriteRenderer>();
+
+
+        myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
+
+
         if(myColor == Color.clear)
             myColor = Color.white;
         if(!hasControl)
             return;
         myAvatarSprite.color = myColor;
+
+
+        if(myAccsSprite != null)
+            myAccsHolder.sprite = myAccsSprite;
+        
 
     }
 
@@ -143,5 +156,10 @@ public class PlayerMovement : MonoBehaviour
 
         myAnim.SetBool("IsDead", IsDead);
         myCollider.enabled = false;
+
+    public void SetAccs(Sprite newAccs)
+    {
+        myAccsSprite = newAccs;
+        myAccsHolder.sprite = myAccsSprite;
     }
 }
