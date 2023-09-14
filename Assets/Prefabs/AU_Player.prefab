@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916928898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -110,7 +110,11 @@ Transform:
   m_GameObject: {fileID: 3419840433982325311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+
+  m_LocalScale: {x: 1, y: 1, z: 1}
+
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 916928899}
@@ -267,6 +271,7 @@ GameObject:
   - component: {fileID: 4903943056784126442}
   - component: {fileID: -4481554885126517618}
   - component: {fileID: 7318070402286484873}
+  - component: {fileID: 2173604024856535099}
   m_Layer: 0
   m_Name: AU_Player
   m_TagString: Player
@@ -383,6 +388,25 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   movementSpeed: 5
+  isImposter: 1
+  KILL:
+    m_Name: KILL
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e18c8607-9b96-4e95-ab28-11f794b3e430
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: db542abb-5272-4ad4-aad7-3080e2be1d76
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: KILL
+      m_Flags: 0
+    m_Flags: 0
+  myCollider: {fileID: 675417280871160787}
 --- !u!95 &7318070402286484873
 Animator:
   serializedVersion: 5
@@ -404,3 +428,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+
+--- !u!135 &2173604024856535099
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240470856491431253}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
+
