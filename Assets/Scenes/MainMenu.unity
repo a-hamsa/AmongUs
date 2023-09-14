@@ -549,8 +549,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21122068, y: 0.53118134}
   m_AnchorMax: {x: 0.21122068, y: 0.53118134}
-  m_AnchoredPosition: {x: -52.88887, y: 45.309685}
-  m_SizeDelta: {x: 180.4257, y: 30}
+  m_AnchoredPosition: {x: -24.7738, y: 45.309685}
+  m_SizeDelta: {x: 152.8039, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1272258865
 MonoBehaviour:
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 1435411583}
   - component: {fileID: 1435411582}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
