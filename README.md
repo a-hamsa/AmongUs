@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Among We ඞ </h1>
+  <h1>Among Us ඞ </h1>
 </div>
 
 ## Background 📄
