@@ -41,8 +41,9 @@ public class PlayerMovement : MonoBehaviour
         KILL.performed += KillTarget;
     }
 
-    //static Sprite myAccsSprite;
-    //SpriteRenderer myAccsHolder;
+    static Sprite myAccsSprite;
+    [SerializeField] SpriteRenderer myAccsHolder;
+
 
     private void OnEnable()
     {
@@ -67,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myAvatar = transform.GetChild(0);
         myAvatarSprite = myAvatar.GetComponent<SpriteRenderer>();
-
 
         // myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
 
