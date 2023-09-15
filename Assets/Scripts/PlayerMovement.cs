@@ -151,7 +151,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     public void SetAccs(Sprite newAccs)
     {
         myAccsSprite = newAccs;
