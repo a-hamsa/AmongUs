@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
     // components
     [SerializeField] bool hasControl;
     public static PlayerMovement localPlayer;
-    Rigidbody myRB;
-    Animator myAnim;
-    Transform myAvatar;
+    [SerializeField] Rigidbody myRB;
+    [SerializeField] Animator myAnim;
+    [SerializeField] Transform myAvatar;
     
     // player movement
     [SerializeField] InputAction WASD;
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         myAvatar = transform.GetChild(0);
         myAvatarSprite = myAvatar.GetComponent<SpriteRenderer>();
 
-        myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        // myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
 
 
         if(myColor == Color.clear)
