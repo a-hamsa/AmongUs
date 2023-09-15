@@ -9,9 +9,12 @@ public class PlayerMovement : MonoBehaviour
     // components
     [SerializeField] bool hasControl;
     public static PlayerMovement localPlayer;
-    Rigidbody myRB;
-    Animator myAnim;
-    Transform myAvatar;
+
+    [SerializeField] Rigidbody myRB;
+    [SerializeField] Animator myAnim;
+    [SerializeField] Transform myAvatar;
+    
+
     CapsuleCollider cpsColider;
 
     // player movement
@@ -65,7 +68,9 @@ public class PlayerMovement : MonoBehaviour
         myAvatar = transform.GetChild(0);
         myAvatarSprite = myAvatar.GetComponent<SpriteRenderer>();
 
-        //myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
+
+        // myAccsHolder = transform.GetChild(1).GetComponent<SpriteRenderer>();
+
 
 
         if (myColor == Color.clear)
@@ -152,18 +157,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+=======
     //public void SetAccs(Sprite newAccs)
     //{
     //    myAccsSprite = newAccs;
     //    myAccsHolder.sprite = myAccsSprite;
 //
     //}
+
     public void Die()
     {
         IsDead = true;
 
         myAnim.SetBool("IsDead", IsDead);
         myCollider.enabled = false;
+
         cpsColider.isTrigger = false;
         
     }
