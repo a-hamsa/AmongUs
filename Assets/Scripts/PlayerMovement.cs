@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     static Sprite myAccsSprite;
-    SpriteRenderer myAccsHolder;
+    [SerializeField] SpriteRenderer myAccsHolder;
 
     private void OnEnable()
     {
