@@ -18,10 +18,10 @@ public class CharacterCustomizer : MonoBehaviour
         PlayerMovement.localPlayer.SetColor(allColors[colorIndex]);
     }
 
-    public void setAccs(int  accsIndex)
-    {
-        PlayerMovement.localPlayer.SetAccs(allAccs[accsIndex]);
-    }
+    //public void setAccs(int  accsIndex)
+    //{
+    //    PlayerMovement.localPlayer.SetAccs(allAccs[accsIndex]);
+    //}
 
     public void NextScene(int sceneIndex)
     {
