@@ -151,17 +151,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void SetAccs(Sprite newAccs)
+    {
+        myAccsSprite = newAccs;
+        myAccsHolder.sprite = myAccsSprite;
+
+    }
     public void Die()
     {
         IsDead = true;
 
         myAnim.SetBool("IsDead", IsDead);
         myCollider.enabled = false;
-
-    public void SetAccs(Sprite newAccs)
-    {
-        myAccsSprite = newAccs;
-        myAccsHolder.sprite = myAccsSprite;
 
     }
 }
